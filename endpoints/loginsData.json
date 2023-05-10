@@ -1,0 +1,14 @@
+{
+  "loginsData": [
+    {
+      "id": 1,
+      "email": "jankowalski@wp.pl",
+      "password": "jan123456"
+    },
+    {
+      "id": 2,
+      "email": "piotrnowak@wp.pl",
+      "password": "piotr123456"
+    }
+  ]
+}

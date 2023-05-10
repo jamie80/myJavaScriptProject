@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Wroclaw Airport</title>
+  </head>
+  <body id="body">
+    <header class="header-container">
+      <ion-icon class="header-icon" name="calendar-outline"></ion-icon>
+      <div class="header-item" id="date"></div>
+      <ion-icon class="header-icon" name="time-outline"></ion-icon>
+      <div class="header-item" id="time"></div>
+      <div class="header-item">
+        <ion-icon class="header-icon" name="earth"></ion-icon>
+        <div class="header-item" id="logo">Wroclaw Airport</div>
+      </div>
+    </header>
+    <!-- I N T R O D U C T I O N    S E C T I O N  -->
+    <section class="introduction">
+      <div class="introduction-box">
+        <h1 class="introduction-box-title">Welcome to Wroclaw Airport</h1>
+        <p class="introduction-box-text">
+          The most welcoming airport in Poland provides great spaces for the
+          people who aren’t traveling as well as those who are. The atrium, the
+          main hall, the terrace, and the passenger concourse make this a
+          dramatic and welcoming place for everyone.
+        </p>
+      </div>
+      <!-- W E A T H E R  -->
+      <div class="weather-box">
+        <h2 class="weather-box-title">The weather</h2>
+        <div class="weather-box-content">
+          <p class="weather-city-name" id="cityName"></p>
+          <img id="currentWeatherImg" src="" alt="picture of the weather" />
+          <p class="weather-temperature" id="temperature"></p>
+          <p class="weather-weather" id="weather"></p>
+        </div>
+      </div>
+    </section>
+    <!-- * * * B O O K I N G * * * -->
+    <section class="booking">
+      <div class="booking-box" id="booking-box">
+        <!-- * * * F I R S T    C A R D * * * -->
+        <div id="departure" class="booking-card departure active">
+          <button type="button" id="next-in-departure" class="btn-next">
+            <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+          </button>
+          <h2 class="title">departure</h2>
+          <span class="booking-card-number">1</span>
+          <div class="booking-card-item">
+            <form action="">
+              <label for="departure-select">1. Departure (from):</label>
+              <select name="departure-select" id="departure-select" required>
+                <option value="">--Please choose an option--</option>
+                <option value="Wroclaw">Wrocław</option>
+              </select>
+            </form>
+          </div>
+        </div>
+        <!-- * * * S E C O N D    C A R D * * * -->
+        <div class="booking-card destination">
+          <button type="button" id="back-in-destination" class="btn-back">
+            <ion-icon name="arrow-back-circle-outline"></ion-icon>
+          </button>
+          <button type="button" id="next-in-destination" class="btn-next">
+            <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+          </button>
+          <h2 class="title">destination</h2>
+          <span class="booking-card-number">2</span>
+          <div class="booking-card-item">
+            <form action="">
+              <label for="destination-select">2. Destination (to):</label>
+              <select
+                name="destination-select"
+                id="destination-select"
+                required
+              >
+                <option value="">--Please choose an option--</option>
+              </select>
+            </form>
+          </div>
+        </div>
+        <!-- * * * T H I R D    C A R D * * * -->
+        <div class="booking-card date">
+          <button type="button" id="back-in-date" class="btn-back">
+            <ion-icon name="arrow-back-circle-outline"></ion-icon>
+          </button>
+          <button type="button" id="next-in-date" class="btn-next">
+            <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+          </button>
+          <h2 class="title">date</h2>
+          <span class="booking-card-number">3</span>
+          <div class="booking-card-item">
+            <form action="">
+              <h3>3. Choose dates:</h3>
+              <div class="date-select-container">
+                <div class="date-select-box">
+                  <label for="leaving-date-select" class="leaving-date-label"
+                    >Departing:</label
+                  >
+                  <input
+                    type="date"
+                    class="leaving-date-select"
+                    id="leaving-date-select"
+                    value=""
+                  />
+                </div>
+                <div class="date-select-box">
+                  <label
+                    for="returning-date-select"
+                    class="returning-date-label"
+                    >Returning:</label
+                  >
+                  <input
+                    type="date"
+                    class="returning-date-select"
+                    id="returning-date-select"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- * * * F O U R T H    C A R D * * * -->
+        <div class="booking-card passenger">
+          <button type="button" id="back-in-passenger" class="btn-back">
+            <ion-icon name="arrow-back-circle-outline"></ion-icon>
+          </button>
+          <h2 class="title">passengers</h2>
+          <span class="booking-card-number">4</span>
+          <div class="booking-card-item">
+            <form action="">
+              <h3>4. Choose passengers:</h3>
+              <div class="passengers-select-container">
+                <div class="passengers-select-box">
+                  <label
+                    for="adult-passengers-select"
+                    class="adult-passengers-label"
+                    >Adult:</label
+                  >
+                  <input
+                    type="number"
+                    class="adult-passengers-select"
+                    id="adult-passengers-select"
+                    min="0"
+                    max="9"
+                    placeholder="Please select"
+                  />
+                </div>
+                <div class="passengers-select-box">
+                  <label
+                    for="children-passengers-select"
+                    class="children-passengers-label"
+                    >Children:</label
+                  >
+                  <input
+                    type="number"
+                    class="children-passengers-select"
+                    id="children-passengers-select"
+                    min="0"
+                    max="9"
+                    placeholder="Please select"
+                  />
+                </div>
+              </div>
+              <button type="button" class="log-in" id="log-in">
+                Search a flight
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- * * * * * B O O K I N G    B O X 2 * * * * * -->
+
+      <div class="booking-box2 hide-display" id="booking-box2">
+        <!-- * * * S I X T H    C A R D * * * -->
+        <div id="price" class="booking-card price active">
+          <button type="button" id="next-in-price" class="btn-next">
+            <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+          </button>
+          <h2 class="title">price</h2>
+          <span class="booking-card-number">6</span>
+          <div class="booking-card-item">
+            <form action="">
+              <label for="price-select">6. Time & price :</label>
+              <select name="price-select" id="price-select" required></select>
+            </form>
+          </div>
+        </div>
+        <!-- * * * S E V E N T H    C A R D * * * -->
+        <div class="booking-card bag">
+          <button type="button" id="back-in-bag" class="btn-back">
+            <ion-icon name="arrow-back-circle-outline"></ion-icon>
+          </button>
+          <button type="button" id="next-in-bag" class="btn-next">
+            <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+          </button>
+          <h2 class="title">bag</h2>
+          <span class="booking-card-number">7</span>
+          <div class="booking-card-item">
+            <form action="">
+              <label for="bag-select">7. Bag :</label>
+              <select name="bag-select" id="bag-select" required></select>
+            </form>
+          </div>
+        </div>
+        <!-- * * * E I G H T H    C A R D * * * -->
+        <div class="booking-card seat">
+          <button type="button" id="back-in-seat" class="btn-back">
+            <ion-icon name="arrow-back-circle-outline"></ion-icon>
+          </button>
+          <button type="button" id="next-in-seat" class="btn-next">
+            <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+          </button>
+          <h2 class="title">seat</h2>
+          <span class="booking-card-number">8</span>
+          <div class="booking-card-item">
+            <form action="">
+              <label for="seat-select">8. Seat:</label>
+              <select name="seat-select" id="seat-select" required></select>
+            </form>
+          </div>
+        </div>
+        <!-- * * * N I N E T H    C A R D * * * -->
+        <div class="booking-card summary">
+          <button type="button" id="back-in-summary" class="btn-back">
+            <ion-icon name="arrow-back-circle-outline"></ion-icon>
+          </button>
+          <h2 class="title">summary</h2>
+          <span class="booking-card-number">9</span>
+          <div class="booking-card-item">
+            <h3 class="summary-title">9. Price summary</h3>
+            <div id="summary-result" class="summary-result"></div>
+            <button id="next-button-payment" class="next-button-payment">
+              Payment
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- * * * E N D    O F    B O O K I N G    B O X 2 * * * -->
+
+      <div class="additional-box" id="additional-box">
+        <div class="confirmation-box">
+          <h2 class="additional-box-title">5. Confirmation</h2>
+          <div class="additional-box-container">
+            <form action="">
+              <div class="input-box">
+                <label for="confirmation-departure">Departure (from):</label>
+                <input
+                  type="text"
+                  id="confirmation-departure"
+                  required
+                  readonly
+                />
+              </div>
+              <div class="input-box">
+                <label for="confirmation-destination">Destination (to):</label>
+                <input
+                  type="text"
+                  id="confirmation-destination"
+                  required
+                  readonly
+                />
+              </div>
+              <div class="input-box">
+                <label for="confirmation-departing-date">Departing-date:</label>
+                <input
+                  type="text"
+                  id="confirmation-departing-date"
+                  required
+                  readonly
+                />
+              </div>
+              <div class="input-box">
+                <label for="confirmation-returning-date">Returning-date:</label>
+                <input
+                  type="text"
+                  id="confirmation-returning-date"
+                  required
+                  readonly
+                />
+              </div>
+              <div class="input-box">
+                <label for="confirmation-adult">Adult:</label>
+                <input type="text" id="confirmation-adult" required readonly />
+              </div>
+              <div class="input-box">
+                <label for="confirmation-children">Children:</label>
+                <input
+                  type="text"
+                  id="confirmation-children"
+                  required
+                  readonly
+                />
+              </div>
+              <div class="input-box">
+                <p class="error" id="error">
+                  Please, choose the number of passengers once again (BOTH,
+                  adult and children)
+                </p>
+                <button
+                  type="button"
+                  id="confirmation-btn"
+                  class="confirmation-btn"
+                >
+                  Confirm
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- P O P - U P  -->
+    <div class="popup" id="popup">
+      <div class="close-btn">&times;</div>
+      <form class="form">
+        <h2>Log in</h2>
+        <div class="form-element">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Your email" required />
+        </div>
+        <div class="form-element">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Your password"
+            required
+          />
+        </div>
+        <div class="form-element">
+          <button type="button" id="sign-in">Sign in</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="./dist/bundle.js"></script>
+    <!-- I O N I C O N S  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
