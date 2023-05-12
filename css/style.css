@@ -344,7 +344,7 @@ button {
   border-radius: 10px;
   cursor: pointer;
   font-family: inherit;
-  margin-top: 48px;
+  margin-top: 6px;
   margin-left: 164px;
   transition: all 0.3s;
 }
@@ -526,6 +526,11 @@ button {
 
 .show-display {
   display: flex;
+}
+
+.additional-paragraph {
+  font-size: 12px;
+  font-weight: normal;
 }
 
 .booking-box2-text {

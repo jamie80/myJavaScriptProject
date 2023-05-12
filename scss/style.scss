@@ -346,7 +346,7 @@ button {
   border-radius: 10px;
   cursor: pointer;
   font-family: $font-family_2;
-  margin-top: 48px;
+  margin-top: 6px;
   margin-left: 164px;
   transition: all 0.3s;
   &:hover {
@@ -527,6 +527,10 @@ button {
 // * * * * * * * * * *
 // B O O K I N G    B O X 2
 // * * * * * * * * * *
+.additional-paragraph {
+  font-size: 12px;
+  font-weight: normal;
+}
 .booking-box2-text {
   margin-top: 8px;
   font-size: 16px;
